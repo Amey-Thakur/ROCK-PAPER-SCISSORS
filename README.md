@@ -12,6 +12,6 @@
 
 ---
 
-<p align="center"> <b> 👉🏻 Created Rock Paper Scissors 👈🏻 <b> </p>
+<p align="center"> <b> 👉🏻 Created Rock Paper Scissors Game 👈🏻 <b> </p>
  
 <p align="center"><a href='https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
