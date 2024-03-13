@@ -1,6 +1,6 @@
 # ROCK-PAPER-SCISSORS
 
- >**[Try The Web Application!](https://amey-thakur.github.io/ROCK-PAPER-SCISSORS)**  ✂
+ >**[Try The Web Application!](https://amey-thakur.github.io/ROCK-PAPER-SCISSORS)** 🪨 📄 ✂
 
 ![image](https://user-images.githubusercontent.com/54937357/158045104-3417d0a9-e358-4aa2-baba-b0f29588ae8d.png)
 
@@ -14,4 +14,4 @@
 
 <p align="center"> <b> 👉🏻 Created Rock Paper Scissors Game 👈🏻 <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
