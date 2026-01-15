@@ -10,6 +10,12 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
+/*
+  CSS Custom Properties (Variables):
+  Defined on :root for global access.
+  'primary-color' is the main theme color, 'win-color' and 'lose-color' provide feedback,
+  and 'modal-duration' controls the animation timing.
+*/
 :root {
   --primary-color: #003699;
   --dark-color: #333333;
@@ -138,6 +144,11 @@ body {
   margin-top: 1rem;
 }
 
+/*
+  Modal Animation:
+  @keyframes 'modalopen' defines a simple fade-in effect.
+  The animation is triggered when the modal is displayed.
+*/
 @keyframes modalopen {
   from {
     opacity: 0;

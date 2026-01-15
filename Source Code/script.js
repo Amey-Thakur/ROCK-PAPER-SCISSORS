@@ -28,6 +28,11 @@ function play(e) {
 }
 
 // Get computers choice
+/**
+ * Computer Choice Generation using Math.random()
+ * Generates a pseudo-random number and maps it to one of three choices.
+ * The distribution is roughly even (33% each) due to the threshold values (0.34, 0.67).
+ */
 function getComputerChoice() {
   const rand = Math.random();
   if (rand < 0.34) {
@@ -40,6 +45,14 @@ function getComputerChoice() {
 }
 
 // Get game winner
+/**
+ * Winner Determination Algorithm
+ * Implements the game rules:
+ * - Rock beats Scissors
+ * - Paper beats Rock
+ * - Scissors beats Paper
+ * Returns 'draw', 'player', or 'computer'.
+ */
 function getWinner(p, c) {
   if (p === c) {
     return 'draw';
@@ -64,6 +77,11 @@ function getWinner(p, c) {
   }
 }
 
+/**
+ * UI Update and Modal Display
+ * Updates the scoreboard and dynamically generates HTML content for the result modal
+ * using template literals.
+ */
 function showWinner(winner, computerChoice) {
   if (winner === 'player') {
     // Inc player score
