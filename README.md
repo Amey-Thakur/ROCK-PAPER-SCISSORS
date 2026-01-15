@@ -47,14 +47,17 @@
 <a name="overview"></a>
 ## Overview
 
-**Rock Paper Scissors** is a digital adaptation of the popular hand game, developed using standard web technologies. The project provides a simple, clean interface for users to play against a computer opponent.
+**Rock Paper Scissors** is an interactive simulation of the classic zero-sum hand game, engineered to demonstrate real-time user feedback and state management. The interface acts as a transparent mediator between the user's input and the system's random logic generation.
 
-The application logic simulates the computer's choice randomly and determines the winner based on standard game rules, updating scores in real-time.
+### HMI Principles
+The development of this interface was guided by core **Human-Machine Interaction** paradigms:
+*   **System State Visibility**: The UI provides immediate confirmation of user choices and computer counter-moves, ensuring the user never has to guess the system's status.
+*   **Response Latency**: The system is optimized for negligible delay between input and result display, maintaining the illusion of a continuous, "live" interaction.
 
 > [!TIP]
-> **Game Design**
+> **Feedback & Affordance**
 >
-> The user interface uses clear iconography and distinct visual feedback for game outcomes (Win/Loss/Draw) to enhance the player experience.
+> The interactive icons for Rock, Paper, and Scissors rely on strong **Affordances**—their visual design clearly invites clicking. Coupled with the immediate "glow" effect upon selection, the system provides distinct **Visual Feedback**, confirming to the user that their input has been registered and the system state has changed, a critical requirement for highly interactive systems.
 
 ---
 
