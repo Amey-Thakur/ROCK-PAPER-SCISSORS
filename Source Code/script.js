@@ -13,7 +13,7 @@
 //   CONSOLE EASTER EGG ✊✋✌️
 // =========================================
 console.log(
-  "%c✊✋✌️ Rock Paper Scissors",
+  "%c✊🏻✋🏻✌🏻 Rock Paper Scissors",
   "font-size: 24px; font-weight: bold; color: #3b82f6; text-shadow: 2px 2px 0 #1e3a5f;"
 );
 console.log(
