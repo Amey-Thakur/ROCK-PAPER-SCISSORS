@@ -1,3 +1,13 @@
+/*
+  Project: Rock Paper Scissors
+  File: style.css
+  Date: March 13, 2022
+  Description: Custom styling for the game interface, modal, and responsive layout.
+
+  Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
+  Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+  License: MIT
+*/
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 :root {

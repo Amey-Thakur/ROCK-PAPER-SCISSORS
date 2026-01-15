@@ -1,3 +1,13 @@
+/**
+ * Project: Rock Paper Scissors
+ * File: script.js
+ * Date: March 13, 2022
+ * Description: Game logic for Rock Paper Scissors, score tracking, and DOM manipulation.
+ * 
+ * Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
+ * Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+ * License: MIT
+ */
 const choices = document.querySelectorAll('.choice');
 const score = document.getElementById('score');
 const result = document.getElementById('result');
@@ -63,7 +73,7 @@ function showWinner(winner, computerChoice) {
       <h1 class="text-win">You Win</h1>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
       <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() +
-        computerChoice.slice(1)}</strong></p>
+      computerChoice.slice(1)}</strong></p>
     `;
   } else if (winner === 'computer') {
     // Inc computer score
@@ -73,14 +83,14 @@ function showWinner(winner, computerChoice) {
       <h1 class="text-lose">You Lose</h1>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
       <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() +
-        computerChoice.slice(1)}</strong></p>
+      computerChoice.slice(1)}</strong></p>
     `;
   } else {
     result.innerHTML = `
       <h1>It's A Draw</h1>
       <i class="fas fa-hand-${computerChoice} fa-10x"></i>
       <p>Computer Chose <strong>${computerChoice.charAt(0).toUpperCase() +
-        computerChoice.slice(1)}</strong></p>
+      computerChoice.slice(1)}</strong></p>
     `;
   }
   // Show score
