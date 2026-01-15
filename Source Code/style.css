@@ -36,6 +36,11 @@ body {
   line-height: 1.6;
   background: #fff;
   color: #333;
+  /* Anti-Select Protection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container {
