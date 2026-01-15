@@ -115,21 +115,19 @@ ROCK-PAPER-SCISSORS/
 ## Results
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/54937357/158045104-3417d0a9-e358-4aa2-baba-b0f29588ae8d.png" alt="Start Screen" width="80%">
-  <br>
-  *Game Start Screen*
-  
+  <b>Game Start Screen</b>
   <br><br>
-  
-  <img src="https://user-images.githubusercontent.com/54937357/158045157-0c5a2790-60d4-4550-8490-f4682b9faa17.png" alt="Gameplay" width="60%">
-  <br>
-  *Gameplay Interaction*
-  
+  <img src="https://user-images.githubusercontent.com/54937357/158045104-3417d0a9-e358-4aa2-baba-b0f29588ae8d.png" alt="Start Screen" width="80%">
   <br><br>
 
-  <img src="https://user-images.githubusercontent.com/54937357/158045131-1b56053f-9f5e-495a-a8e1-92d392094155.png" alt="Round Result" width="60%">
-  <br>
-  *Round Results Display*
+  <b>Gameplay Interaction</b>
+  <br><br>
+  <img src="https://user-images.githubusercontent.com/54937357/158045157-0c5a2790-60d4-4550-8490-f4682b9faa17.png" alt="Gameplay" width="80%">
+  <br><br>
+
+  <b>Round Results Display</b>
+  <br><br>
+  <img src="https://user-images.githubusercontent.com/54937357/158045131-1b56053f-9f5e-495a-a8e1-92d392094155.png" alt="Round Result" width="80%">
 </div>
 
 ---
