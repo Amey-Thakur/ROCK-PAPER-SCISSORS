@@ -157,13 +157,16 @@ ROCK-PAPER-SCISSORS/
      ========================================================================================= -->
 ## Usage Guidelines
 
-This repository is shared for educational purposes.
+This repository is openly shared to support learning and knowledge exchange across the academic community.
 
 **For Students**  
-Examine the `app.js` file to understand how to implement basic game logic and event listeners in JavaScript.
+Use this project as reference material for understanding interactive system design, web development patterns, and Human Machine Interaction principles. The source code is available for study to facilitate self-paced learning and exploration of user-centric design patterns.
 
 **For Educators**  
-The project serves as an ideal introductory assignment for web development classes focusing on conditional logic and DOM manipulation.
+This project may serve as a practical lab example or supplementary teaching resource for Human Machine Interaction and Human Machine Interaction Laboratory courses (`CSC801` & `CSL801`). Attribution is appreciated when utilizing content.
+
+**For Researchers**  
+The documentation and design approach may provide insights into academic project structuring and interactive web application development.
 
 ---
 
