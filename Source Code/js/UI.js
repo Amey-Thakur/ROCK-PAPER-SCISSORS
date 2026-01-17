@@ -60,6 +60,52 @@ document.addEventListener('DOMContentLoaded', () => {
         statusMsg.style.color = "var(--text-primary)";
     });
 
+    shareBtn.addEventListener('click', () => {
+        window.soundManager.playClick();
+        shareScore();
+    });
+
+    function shareScore() {
+        // Populate Data
+        const state = window.gameLogic.getScore();
+        shareScoreVal.textContent = state.player;
+        shareHighScore.textContent = state.highScore;
+
+        // Check availability
+        if (typeof html2canvas === 'undefined') {
+            const msg = "Error: Library not loaded. Check connection.";
+            statusMsg.textContent = msg;
+            alert(msg);
+            return;
+        }
+
+        const originalText = shareBtn.innerHTML;
+        shareBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+
+        // Generate Canvas
+        html2canvas(shareCard, {
+            scale: 2, // High resolution
+            backgroundColor: null,
+            useCORS: true,
+            logging: false,
+            allowTaint: true
+        }).then(canvas => {
+            const link = document.createElement('a');
+            link.download = `RPS-Survivor-Score-${state.player}.png`;
+            link.href = canvas.toDataURL('image/png', 1.0);
+            link.click();
+
+            shareBtn.innerHTML = '<i class="fas fa-check"></i> Saved!';
+            setTimeout(() => {
+                shareBtn.innerHTML = originalText;
+            }, 2000);
+        }).catch(err => {
+            console.error("html2canvas error:", err);
+            statusMsg.textContent = "Error generating image!";
+            shareBtn.innerHTML = originalText;
+        });
+    }
+
     function initUI() {
         const state = window.gameLogic.getScore();
         updateScoreBoard();
@@ -138,15 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Check Game Over
             if (state.isGameOver) {
-                setTimeout(() => showGameOver(state.player), 1000);
+                setTimeout(() => showGameOver(state.player, state.highScore), 1000);
             }
 
             isIterating = false;
         }, 1500); // 1.5s animation duration
     }
 
-    function showGameOver(finalScore) {
+    function showGameOver(finalScore, highScore) {
         finalScoreElem.textContent = finalScore;
+        document.getElementById('final-high-score').textContent = highScore;
         gameOverModal.classList.remove('hidden');
         window.soundManager.playLose(); // Play lose sound again or valid game over sound
     }
