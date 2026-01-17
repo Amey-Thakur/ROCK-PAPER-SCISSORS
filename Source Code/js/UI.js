@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         choice.addEventListener('click', () => {
             const playerChoice = choice.dataset.choice;
             if (!isIterating) {
+                window.soundManager.playClick();
                 playRound(playerChoice);
             }
         });
@@ -79,8 +80,45 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStatus(result, playerChoice, computerChoice);
             updateScoreBoard();
 
+            // Play Sounds & Effects
+            if (result === 'win') {
+                window.soundManager.playWin();
+                spawnParticles(playerScoreElem);
+            } else if (result === 'lose') {
+                window.soundManager.playLose();
+            } else {
+                window.soundManager.playDraw();
+            }
+
             isIterating = false;
         }, 1500); // 1.5s animation duration
+    }
+
+    function spawnParticles(target) {
+        const rect = target.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+
+            // Random direction
+            const angle = Math.random() * Math.PI * 2;
+            const velocity = 50 + Math.random() * 100;
+            const tx = Math.cos(angle) * velocity + 'px';
+            const ty = Math.sin(angle) * velocity + 'px';
+
+            particle.style.setProperty('--tx', tx);
+            particle.style.setProperty('--ty', ty);
+            particle.style.left = centerX + 'px';
+            particle.style.top = centerY + 'px';
+            particle.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => particle.remove(), 1000);
+        }
     }
 
     function updateStatus(result, pChoice, cChoice) {
