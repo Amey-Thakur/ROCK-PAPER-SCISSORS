@@ -11,6 +11,8 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+/* Added for footer match */
 
 :root {
   /* Curator Palette */
@@ -28,6 +30,8 @@
   /* Amber */
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
+  --accent-hover: #60a5fa;
+  /* From 404 */
 
   /* Glass Effect */
   --glass-bg: rgba(255, 255, 255, 0.05);
@@ -194,10 +198,16 @@ body {
   align-items: center;
   gap: 1rem;
   transition: transform 0.2s ease;
+  padding: 1rem;
+  /* Added padding target for click */
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .choice-container:hover {
   transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.05);
+  /* Show interactive area */
 }
 
 .choice {
@@ -209,12 +219,11 @@ body {
   justify-content: center;
   border-radius: 50%;
   border: 2px solid var(--glass-border);
-  cursor: pointer;
   transition: all 0.3s ease;
   color: var(--text-muted);
 }
 
-.choice:hover {
+.choice-container:hover .choice {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--accent-primary);
   color: #fff;
@@ -365,23 +374,26 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Footer */
-footer {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
+/* Footer - Simple (From 404) */
+.footer-simple {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  /* Needs fallback or var */
+  /* Re-defining var for safety if not pulled from root */
+  color: #93c5fd;
   text-align: center;
+  font-family: 'Play', sans-serif;
 }
 
-.highlight {
-  color: var(--accent-primary);
-  font-weight: 500;
+.footer-simple a {
+  color: var(--accent-hover);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.citation-date {
-  font-size: 0.75rem;
-  opacity: 0.5;
-  margin-top: 0.25rem;
+.footer-simple a:hover {
+  text-decoration: underline;
 }
 
 /* Responsiveness */
