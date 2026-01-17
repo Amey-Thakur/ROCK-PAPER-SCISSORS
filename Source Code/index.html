@@ -114,81 +114,62 @@
 
     <!-- Hidden Share Card (Premium Design) -->
     <div id="share-card"
-        style="position: fixed; top: -9999px; left: -9999px; width: 600px; height: 400px; padding: 40px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; border-radius: 20px; font-family: 'Play', sans-serif; text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+        style="position: fixed; top: -9999px; left: -9999px; width: 600px; padding: 40px; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); color: white; border-radius: 20px; font-family: 'Play', sans-serif; text-align: center; border: 2px solid #3b82f6; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden;">
 
-        <!-- Elegant Background Pattern -->
+        <!-- Background Watermarks -->
         <div
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.03; background-image: radial-gradient(#3b82f6 1px, transparent 1px); background-size: 20px 20px;">
-        </div>
-
-        <!-- Symbolic Background Icons (Balanced) -->
-        <div
-            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; opacity: 0.05; pointer-events: none; display: flex; justify-content: center; align-items: center;">
-            <i class="fas fa-hand-rock"
-                style="font-size: 200px; position: absolute; transform: translate(-120px, -60px) rotate(-15deg);"></i>
-            <i class="fas fa-hand-paper"
-                style="font-size: 160px; position: absolute; transform: translate(120px, 40px) rotate(15deg);"></i>
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <i class="fas fa-hand-rock" style="font-size: 150px; position: absolute; top: -20px; left: -20px;"></i>
+            <i class="fas fa-hand-paper" style="font-size: 150px; position: absolute; bottom: -20px; right: -20px;"></i>
             <i class="fas fa-hand-scissors"
-                style="font-size: 140px; position: absolute; transform: translate(0px, 100px) rotate(-90deg) scaleX(-1);"></i>
+                style="font-size: 150px; position: absolute; top: 40%; left: 40%; transform: rotate(45deg);"></i>
         </div>
 
-        <!-- Header -->
-        <div style="position: relative; z-index: 10;">
+        <div style="position: relative; z-index: 1;">
+            <!-- Added HMI Project Label -->
             <div
                 style="font-size: 10px; text-transform: uppercase; letter-spacing: 4px; color: #64748b; margin-bottom: 5px;">
-                Human Machine Intelligence Project</div>
+                Human Machine Interaction Project</div>
+
             <h1
-                style="margin: 0; font-size: 36px; text-transform: uppercase; letter-spacing: 2px; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-                Rock Paper Scissors
-            </h1>
+                style="margin: 0; font-size: 45px; text-transform: uppercase; letter-spacing: 3px; color: white; text-shadow: 0 0 25px rgba(59, 130, 246, 0.6);">
+                Rock Paper Scissors</h1>
+            <p style="color: #93c5fd; letter-spacing: 1px; font-size: 16px; margin-top: 5px;">Survival Mode Challenge
+            </p>
+
             <div
-                style="width: 40px; height: 4px; background: linear-gradient(90deg, #60a5fa, #c084fc); margin: 15px auto; border-radius: 2px;">
-            </div>
-        </div>
-
-        <!-- Main Stats -->
-        <div
-            style="position: relative; z-index: 10; display: flex; justify-content: center; align-items: center; gap: 40px; margin: 10px 0;">
-
-            <div style="text-align: center;">
-                <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">High Score
+                style="background: rgba(0,0,0,0.3); border: 1px solid rgba(59, 130, 246, 0.3); padding: 30px; border-radius: 15px; margin: 25px 0;">
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #93c5fd;">I Survived
                 </div>
-                <div id="share-high-score" style="font-size: 32px; font-weight: bold; color: #60a5fa;">0</div>
-            </div>
-
-            <div
-                style="background: rgba(255,255,255,0.05); padding: 15px 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px);">
-                <div
-                    style="font-size: 14px; color: #c084fc; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px;">
-                    I Survived</div>
                 <div id="share-score-val"
-                    style="font-size: 64px; font-weight: 700; line-height: 1; color: white; text-shadow: 0 0 20px rgba(192, 132, 252, 0.5);">
+                    style="font-size: 80px; font-weight: 700; line-height: 1; margin: 10px 0; color: white; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);">
                     0</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #93c5fd;">Rounds
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 25px; padding: 0 20px;">
+                <div style="text-align: left;">
+                    <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">High Score</div>
+                    <div id="share-high-score" style="font-size: 24px; color: #3b82f6; font-weight: bold;">0</div>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">Opponent</div>
+                    <div style="font-size: 16px; color: #f87171; font-weight: bold;">Smart AI Bot</div>
+                </div>
+            </div>
+
+            <!-- Creative Authorship -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center;">
                 <div
-                    style="font-size: 12px; color: #94a3b8; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;">
-                    Rounds</div>
-            </div>
-
-            <div style="text-align: center; opacity: 0.6;">
-                <i class="fas fa-robot" style="font-size: 24px; color: #94a3b8; margin-bottom: 5px;"></i>
-                <div
-                    style="font-size: 10px; color: #94a3b8; text-transform: uppercase; max-width: 80px; line-height: 1.4;">
-                    Smart AI <br>Enabled</div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div
-            style="position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05);">
-            <div style="text-align: left;">
-                <div style="font-size: 14px; font-weight: bold; color: white;">Amey Thakur <span
-                        style="color: #475569;">&</span> Mega Satish</div>
-                <div style="font-size: 10px; color: #64748b; margin-top: 4px;">Creators</div>
-            </div>
-
-            <div style="text-align: right;">
-                <div style="font-size: 12px; color: #60a5fa; font-family: monospace;">
-                    amey-thakur.github.io/ROCK-PAPER-SCISSORS</div>
+                    style="display: flex; justify-content: center; align-items: center; gap: 15px; font-size: 0.9rem; color: #cbd5e1;">
+                    <span> <i class="fas fa-code" style="color: #3b82f6;"></i> Amey Thakur</span>
+                    <span style="color: #475569;">|</span>
+                    <span> <i class="fas fa-paint-brush" style="color: #c084fc;"></i> Mega Satish</span>
+                </div>
+                <div style="margin-top: 8px; font-size: 0.75rem; font-family: monospace; color: #64748b;">
+                    amey-thakur.github.io/ROCK-PAPER-SCISSORS
+                </div>
             </div>
         </div>
     </div>
