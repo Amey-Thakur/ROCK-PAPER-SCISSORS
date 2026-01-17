@@ -31,11 +31,37 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
+    /* Prevent scrolling as requested */
     user-select: none;
     -webkit-user-select: none;
     position: relative;
     padding: 20px;
+}
+
+/* Button Home (Play Again) */
+.btn-home {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-home:hover {
+    transform: translateY(-3px);
+    background: var(--accent-hover);
+    box-shadow: 0 10px 20px var(--accent-glow);
 }
 
 /* Background Animations */
@@ -80,6 +106,11 @@ body {
 .game-container {
     max-width: var(--container-width);
     width: 100%;
+    max-height: 90vh;
+    /* Prevent overflow on small screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     z-index: 2;
     background: var(--glass-bg);
@@ -87,7 +118,8 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
-    padding: 40px;
+    padding: 30px;
+    /* Reduced padding */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
