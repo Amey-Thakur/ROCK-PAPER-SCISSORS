@@ -1,99 +1,101 @@
 <!--
-  Project: Rock Paper Scissors
-  File: index.html
-  Date: March 13, 2022
-  Description: Main HTML structure for the Rock Paper Scissors game.
-               Refactored for modular JavaScript and enhanced UI.
-  
-  Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
-  Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
-  License: MIT
+    ================================================================
+    Rock Paper Scissors - Main Game
+    ================================================================
+    Project: Rock Paper Scissors
+    Description: A premium, playful Rock-Paper-Scissors game.
+    
+    Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
+    Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+    License: MIT
+    Date Released: 2022-03-12
+    ================================================================
 -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROCK PAPER SCISSORS | Amey & Mega</title>
-  <meta name="author" content="Amey Thakur & Mega Satish">
-  <meta name="description"
-    content="A premium, playful, and neat implementation of the classic Rock Paper Scissors game.">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors | Ultimate Battle</title>
+    <meta name="author" content="Amey Thakur & Mega Satish">
+    <meta name="description"
+        content="Play the ultimate Rock Paper Scissors game against the computer. Premium design and smooth animations.">
+    <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Security Meta Tags -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://kit.fontawesome.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://kit.fontawesome.com https://ka-f.fontawesome.com;">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="canonical" href="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <link rel="stylesheet" href="./style.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!-- Background Elements for Visual Depth -->
-  <div class="bg-shape shape-1"></div>
-  <div class="bg-shape shape-2"></div>
+    <!-- Background Animations -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
 
-  <div class="glass-container">
-    <header class="header">
-      <div class="brand">
-        <h1>R P S</h1>
-        <span class="subtitle">ROCK PAPER SCISSORS</span>
-      </div>
+    <div class="game-container">
+        <header class="header">
+            <h1 class="main-title">Rock Paper Scissors</h1>
+            <div class="score-board">
+                <div class="score-badge">
+                    Player <span id="player-score" class="score-value">0</span>
+                </div>
+                <div class="score-badge">
+                    CPU <span id="computer-score" class="score-value">0</span>
+                </div>
+            </div>
+        </header>
 
-      <div class="stats-bar">
-        <div id="score" class="score-board">
-          <!-- Populated by JS -->
-        </div>
-        <div id="streak-display" class="streak-badge">
-          <!-- Populated by JS -->
-        </div>
-      </div>
+        <main>
+            <div class="arena">
+                <div class="hand-display">
+                    <span id="player-hand" class="hand-icon">✊🏻</span>
+                    <div class="player-label">You</div>
+                </div>
 
-      <button id="restart" class="restart-btn" style="display: none;">
-        <i class="fas fa-redo-alt"></i> New Game
-      </button>
-    </header>
+                <div class="hand-display">
+                    <span id="computer-hand" class="hand-icon">✊🏻</span>
+                    <div class="player-label">CPU</div>
+                </div>
+            </div>
 
-    <main>
-      <h2 class="prompt-text">Choose Your Weapon</h2>
+            <div id="status-msg" class="status-msg">
+                Choose your weapon!
+            </div>
 
-      <div class="choices">
-        <div class="choice-container" id="rock" role="button" tabindex="0" aria-label="Choose Rock">
-          <i class="choice fas fa-hand-rock fa-5x"></i>
-          <span class="choice-label">Rock</span>
-        </div>
-        <div class="choice-container" id="paper" role="button" tabindex="0" aria-label="Choose Paper">
-          <i class="choice fas fa-hand-paper fa-5x"></i>
-          <span class="choice-label">Paper</span>
-        </div>
-        <div class="choice-container" id="scissors" role="button" tabindex="0" aria-label="Choose Scissors">
-          <i class="choice fas fa-hand-scissors fa-5x"></i>
-          <span class="choice-label">Scissors</span>
-        </div>
-      </div>
-    </main>
-  </div>
+            <div class="controls">
+                <button class="btn-choice" data-choice="rock" title="Rock">
+                    <i class="fas fa-hand-rock"></i>
+                </button>
+                <button class="btn-choice" data-choice="paper" title="Paper">
+                    <i class="fas fa-hand-paper"></i>
+                </button>
+                <button class="btn-choice" data-choice="scissors" title="Scissors">
+                    <i class="fas fa-hand-scissors"></i>
+                </button>
+            </div>
+        </main>
 
-  <!-- Result Modal -->
-  <div class="modal" aria-hidden="true">
-    <div id="result" class="modal-content glass-card">
-      <!-- Injected by JS -->
+        <footer class="main-footer">
+            <p>2022 &copy; All Rights Reserved | Designed and Developed by
+                <a href="https://github.com/Amey-Thakur" target="_blank" rel="noopener noreferrer">Amey Thakur</a> &
+                <a href="https://github.com/msatmod" target="_blank" rel="noopener noreferrer">Mega Satish</a>
+            </p>
+        </footer>
     </div>
-  </div>
 
-  <div class="footer-simple">
-    <p>2022 &copy; All Rights Reserved | Designed and Developed by
-      <a href="https://github.com/Amey-Thakur" target="_blank" rel="noopener noreferrer">Amey Thakur</a> &
-      <a href="https://github.com/msatmod" target="_blank" rel="noopener noreferrer">Mega Satish</a>
-    </p>
-  </div>
+    <!-- Scripts -->
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
 
-  <!-- Scripts -->
-  <script src='https://kit.fontawesome.com/3da1a747b2.js' crossorigin="anonymous"></script>
-  <script type="module" src="./js/main.js"></script>
+    <script>
+        // Prevent context menu and selection for game-like feel
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+    </script>
 </body>
 
 </html>
