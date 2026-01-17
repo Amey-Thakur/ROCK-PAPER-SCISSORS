@@ -17,7 +17,7 @@ export default class UI {
         this.game = gameInstance;
 
         // DOM Element Caching (Performance Optimization)
-        this.choices = document.querySelectorAll('.choice');
+        this.choices = document.querySelectorAll('.choice-container');
         this.scoreEl = document.getElementById('score');
         this.resultEl = document.getElementById('result');
         this.restartBtn = document.getElementById('restart');
@@ -51,8 +51,8 @@ export default class UI {
         this.restartBtn.style.display = 'inline-block';
 
         // Identify user intent via ID (rock, paper, or scissors)
-        // Detailed check to handle click on icon vs container if structure varies
-        const playerChoice = e.target.id || e.target.parentElement.id;
+        // using currentTarget ensures we get the ID of the container we attached the listener to
+        const playerChoice = e.currentTarget.id;
 
         if (!['rock', 'paper', 'scissors'].includes(playerChoice)) return; // Guard clause
 
