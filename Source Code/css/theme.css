@@ -1,0 +1,42 @@
+/*
+================================================================
+Rock Paper Scissors - Theme Variables
+================================================================
+Project: Rock Paper Scissors
+Description: CSS Variables for global theme management.
+
+Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
+Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+License: MIT
+Date Released: 2022-03-12
+================================================================
+*/
+
+:root {
+    /* Color Palette - Premium Dark Blue Theme */
+    --bg-gradient-start: #1e3a5f;
+    --bg-gradient-end: #0f172a;
+
+    --text-primary: #f0f9ff;
+    --text-secondary: #93c5fd;
+
+    --accent-color: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-glow: rgba(59, 130, 246, 0.4);
+
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* Result Colors */
+    --color-win: #4ade80;
+    --color-lose: #f87171;
+    --color-draw: #fbbf24;
+
+    /* Typography */
+    --font-main: 'Play', sans-serif;
+
+    /* Spacing & Layout */
+    --container-width: 800px;
+    --border-radius: 16px;
+    --border-radius-pill: 50px;
+}
