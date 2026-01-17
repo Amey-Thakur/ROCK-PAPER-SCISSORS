@@ -18,14 +18,22 @@ class GameLogic {
         this.playerHistory = { rock: 0, paper: 0, scissors: 0 };
         this.lastMove = null;
 
-        // Load Score from LocalStorage
-        const savedScore = localStorage.getItem('rps_score');
-        this.score = savedScore ? JSON.parse(savedScore) : { player: 0, computer: 0 };
+        // Survival Mode State
+        this.lives = 5;
+        this.maxLives = 5;
+        this.isGameOver = false;
+
+        // Load High Score
+        const savedHighScore = localStorage.getItem('rps_high_score');
+        this.highScore = savedHighScore ? parseInt(savedHighScore) : 0;
+
+        this.score = { player: 0, computer: 0 };
     }
 
     getComputerChoice() {
+        if (this.isGameOver) return null;
+
         // Smart AI: Counter the player's most frequent move
-        // Only kick in after some data is collected
         const totalMoves = this.playerHistory.rock + this.playerHistory.paper + this.playerHistory.scissors;
 
         if (totalMoves > 3) {
@@ -33,18 +41,18 @@ class GameLogic {
                 this.playerHistory[a] > this.playerHistory[b] ? a : b
             );
 
-            // Return the counter to the most likely move
             if (mostLikely === 'rock') return 'paper';
             if (mostLikely === 'paper') return 'scissors';
             if (mostLikely === 'scissors') return 'rock';
         }
 
-        // Fallback to Random
         const randomIndex = Math.floor(Math.random() * this.choices.length);
         return this.choices[randomIndex];
     }
 
     getWinner(playerChoice, computerChoice) {
+        if (this.isGameOver) return null;
+
         // Track Player Move for AI
         this.playerHistory[playerChoice]++;
         this.lastMove = playerChoice;
@@ -60,35 +68,40 @@ class GameLogic {
             (playerChoice === 'scissors' && computerChoice === 'paper')
         ) {
             this.score.player++;
+            this.checkHighScore();
             result = 'win';
         } else {
-            this.score.computer++;
+            this.lives--; // Lose a life
+            if (this.lives <= 0) {
+                this.lives = 0;
+                this.isGameOver = true;
+            }
             result = 'lose';
         }
 
-        // Save Score
-        this.saveScore();
         return result;
     }
 
+    checkHighScore() {
+        if (this.score.player > this.highScore) {
+            this.highScore = this.score.player;
+            localStorage.setItem('rps_high_score', this.highScore.toString());
+        }
+    }
+
     getScore() {
-        return this.score;
-    }
-
-    saveScore() {
-        localStorage.setItem('rps_score', JSON.stringify(this.score));
-    }
-
-    resetScore() {
-        this.score = {
-            player: 0,
-            computer: 0
+        return {
+            ...this.score,
+            lives: this.lives,
+            highScore: this.highScore,
+            isGameOver: this.isGameOver
         };
-        this.saveScore();
+    }
 
-        // Optional: Reset AI memory on score reset? 
-        // Let's keep AI memory for a challenge, or reset it too.
-        // Let's reset it to be fair.
+    resetGame() {
+        this.score = { player: 0, computer: 0 };
+        this.lives = this.maxLives;
+        this.isGameOver = false;
         this.playerHistory = { rock: 0, paper: 0, scissors: 0 };
     }
 }

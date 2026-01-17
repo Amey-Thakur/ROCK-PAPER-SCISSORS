@@ -39,12 +39,17 @@
     <div class="game-container">
         <header class="header">
             <h1 class="main-title">Rock Paper Scissors</h1>
+
+            <div class="stats-bar">
+                <div class="lives-container" id="lives-container">
+                    <!-- Hearts will be injected here -->
+                </div>
+                <div class="high-score">High Score: <span id="high-score">0</span></div>
+            </div>
+
             <div class="score-board">
                 <div class="score-badge">
-                    Player <span id="player-score" class="score-value">0</span>
-                </div>
-                <div class="score-badge">
-                    CPU <span id="computer-score" class="score-value">0</span>
+                    Score <span id="player-score" class="score-value">0</span>
                 </div>
             </div>
         </header>
@@ -85,6 +90,18 @@
                 <a href="https://github.com/msatmod" target="_blank" rel="noopener noreferrer">Mega Satish</a>
             </p>
         </footer>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>You ran out of lives!</p>
+            <div class="final-score">Final Score: <span id="final-score">0</span></div>
+            <button id="restart-btn" class="btn-home">
+                <i class="fas fa-redo"></i> Play Again
+            </button>
+        </div>
     </div>
 
     <!-- Scripts -->
