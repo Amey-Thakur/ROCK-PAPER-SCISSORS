@@ -296,10 +296,9 @@ body {
     overflow: hidden;
 }
 
-/* Rotate scissors to point upwards (vertical) */
+/* Rotate scissors to point upwards (Right Hand) */
 .btn-choice .fa-hand-scissors {
-    transform: rotate(270deg);
-    /* Points it upwards if default is pointing right */
+    transform: scaleX(-1) rotate(270deg);
 }
 
 /* ... hover/active ... */
