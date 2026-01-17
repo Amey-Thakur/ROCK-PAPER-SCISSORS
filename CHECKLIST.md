@@ -15,6 +15,11 @@
 - [x] Revamp Footer (match 404 style).
 - [x] Polish UI (animations, hover effects, clean layout).
 
+## Enhancements (Audio & FX)
+- [x] Create `sound.js` (Web Audio API for procedural sounds).
+- [x] Add Particle/Confetti system for wins.
+- [x] Integrate sounds into `ui.js`.
+
 ## Verification
 - [x] Verify Gameplay loop.
 - [x] Verify Responsive/Mobile view.
