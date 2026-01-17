@@ -20,6 +20,11 @@
 - [x] Add Particle/Confetti system for wins.
 - [x] Integrate sounds into `ui.js`.
 
+## Advanced Features (AI & Storage)
+- [x] Implement `LocalStorage` for score persistence.
+- [x] Implement `SmartBot` (Pattern Matching AI).
+- [x] Update `CHECKLIST.md` and UI.
+
 ## Verification
 - [x] Verify Gameplay loop.
 - [x] Verify Responsive/Mobile view.
