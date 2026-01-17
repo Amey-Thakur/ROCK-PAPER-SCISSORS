@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameOverModal = document.getElementById('game-over-modal');
     const finalScoreElem = document.getElementById('final-score');
     const restartBtn = document.getElementById('restart-btn');
+    const shareBtn = document.getElementById('share-btn');
+    const shareCard = document.getElementById('share-card');
+    const shareScoreVal = document.getElementById('share-score-val');
+    const shareHighScore = document.getElementById('share-high-score');
 
     const icons = {
         rock: '✊🏻',
