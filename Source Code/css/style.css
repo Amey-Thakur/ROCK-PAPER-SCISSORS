@@ -296,6 +296,11 @@ body {
     overflow: hidden;
 }
 
+/* Specific rotation for scissors to look like cutting */
+.btn-choice .fa-hand-scissors {
+    transform: rotate(90deg);
+}
+
 /* ... hover/active ... */
 
 /* Status Message */
