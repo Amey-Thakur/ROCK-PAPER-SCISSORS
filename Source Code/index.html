@@ -3,7 +3,8 @@
   File: index.html
   Date: March 13, 2022
   Description: Main HTML structure for the Rock Paper Scissors game.
-
+               Refactored for modular JavaScript and enhanced UI.
+  
   Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
   Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
   License: MIT
@@ -13,8 +14,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>AMEY & MEGA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROCK PAPER SCISSORS | Amey & Mega</title>
   <meta name="author" content="Amey Thakur & Mega Satish">
+  <meta name="description"
+    content="A premium, playful, and neat implementation of the classic Rock Paper Scissors game.">
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Security Meta Tags -->
@@ -25,55 +29,70 @@
   <link rel="canonical" href="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/">
 
   <link rel="stylesheet" href="./style.css">
-
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
-  <div class="container">
+  <!-- Background Elements for Visual Depth -->
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="glass-container">
     <header class="header">
-      <h1>ROCK PAPER SCISSORS</h1>
-      <button id="restart" class="restart-btn">RESTART GAME</button>
-      <div id="score" class="score">
-        <p>player: 0</p>
-        <p>Computer: 0</p>
+      <div class="brand">
+        <h1>R P S</h1>
+        <span class="subtitle">ROCK PAPER SCISSORS</span>
       </div>
+
+      <div class="stats-bar">
+        <div id="score" class="score-board">
+          <!-- Populated by JS -->
+        </div>
+        <div id="streak-display" class="streak-badge">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <button id="restart" class="restart-btn" style="display: none;">
+        <i class="fas fa-redo-alt"></i> New Game
+      </button>
     </header>
-    <h2>MAKE YOUR SELECTION</h2>
-    <!-- 
-        Player Choices:
-        Three options displayed using Font Awesome icons for Rock, Paper, Scissors.
-        CSS Grid is used to arrange them horizontally.
-    -->
-    <div class="choices">
-      <i id="rock" class="choice fas fa-hand-rock fa-10x"></i>
-      <i id="paper" class="choice fas fa-hand-paper fa-10x"></i>
-      <i id="scissors" class="choice fas fa-hand-scissors fa-10x"></i>
+
+    <main>
+      <h2 class="prompt-text">Choose Your Weapon</h2>
+
+      <div class="choices">
+        <div class="choice-container" id="rock" role="button" tabindex="0" aria-label="Choose Rock">
+          <i class="choice fas fa-hand-rock fa-5x"></i>
+          <span class="choice-label">Rock</span>
+        </div>
+        <div class="choice-container" id="paper" role="button" tabindex="0" aria-label="Choose Paper">
+          <i class="choice fas fa-hand-paper fa-5x"></i>
+          <span class="choice-label">Paper</span>
+        </div>
+        <div class="choice-container" id="scissors" role="button" tabindex="0" aria-label="Choose Scissors">
+          <i class="choice fas fa-hand-scissors fa-5x"></i>
+          <span class="choice-label">Scissors</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" aria-hidden="true">
+    <div id="result" class="modal-content glass-card">
+      <!-- Injected by JS -->
     </div>
   </div>
 
-  <!-- Modal -->
-  <!-- 
-      Result Modal:
-      A modal dialog that appears after each round to display the result.
-      CSS animation ('modalopen') provides a fade-in effect.
-  -->
-  <div class="modal">
-    <div id="result" class="modal-content"></div>
-  </div>
-  <!-- partial -->
-  <script src='https://kit.fontawesome.com/3da1a747b2.js'></script>
-  <script src="./script.js"></script>
-
-  <br>
-  <br>
-  <br>
-
-  <footer>
-    <center>
-      <p style="color:#1500ff">AMEY & MEGA</p>
-    </center>
+  <footer class="glass-footer">
+    <p>Designed & Developed by <span class="highlight">Amey Thakur</span> & <span class="highlight">Mega Satish</span>
+    </p>
+    <div class="citation-date">March 13, 2022</div>
   </footer>
+
+  <!-- Scripts -->
+  <script src='https://kit.fontawesome.com/3da1a747b2.js' crossorigin="anonymous"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
