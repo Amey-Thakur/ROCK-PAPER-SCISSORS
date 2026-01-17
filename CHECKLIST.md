@@ -25,6 +25,11 @@
 - [x] Implement `SmartBot` (Pattern Matching AI).
 - [x] Update `CHECKLIST.md` and UI.
 
+## Game Loop Overhaul (Survival Mode)
+- [x] Implement "Lives" system (Start with 3 Hearts).
+- [x] Add "Game Over" screen with Final Score & Restart.
+- [x] Update `High Score` logic (Wins before Game Over).
+
 ## Verification
 - [x] Verify Gameplay loop.
 - [x] Verify Responsive/Mobile view.
