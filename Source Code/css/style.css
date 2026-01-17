@@ -296,10 +296,10 @@ body {
     overflow: hidden;
 }
 
-/* Specific rotation removed as per user feedback */
-/* .btn-choice .fa-hand-scissors {
-    transform: rotate(90deg);
-} */
+/* Flip scissors to match right-hand orientation */
+.btn-choice .fa-hand-scissors {
+    transform: scaleX(-1);
+}
 
 /* ... hover/active ... */
 
