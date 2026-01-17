@@ -296,9 +296,13 @@ body {
     overflow: hidden;
 }
 
-/* Rotate scissors to point upwards (Right Hand) */
+/* Rotate scissors to point upwards (Right Hand) - Final Fix */
 .btn-choice .fa-hand-scissors {
-    transform: scaleX(-1) rotate(270deg);
+    transform: scaleX(1) rotate(90deg);
+    /* Remove flip if it causes issues, or adjust. Wait, user wanted Right Hand. Other icons are right hand. */
+    /* Let's try JUST rotate(90deg) if the Flip was causing confusion? No, user explicitly said "Left Hand" issue. */
+    /* If 270 was Down, 90 is Up. Let's stick to 90. */
+    transform: scaleX(-1) rotate(90deg);
 }
 
 /* ... hover/active ... */
