@@ -2,110 +2,305 @@
   Project: Rock Paper Scissors
   File: style.css
   Date: March 13, 2022
-  Description: Custom styling for the game interface, modal, and responsive layout.
-
+  Description: Premium styling for the game interface using Glassmorphism principles.
+               Focuses on depth, vibrant gradients, and smooth animations.
+  
   Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
   Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
   License: MIT
 */
-@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
-/*
-  CSS Custom Properties (Variables):
-  Defined on :root for global access.
-  'primary-color' is the main theme color, 'win-color' and 'lose-color' provide feedback,
-  and 'modal-duration' controls the animation timing.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
 :root {
-  --primary-color: #003699;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
-  --lose-color: #dc3545;
-  --win-color: #28a745;
-  --modal-duration: 1s;
+  /* Curator Palette */
+  --bg-gradient-1: #0f172a;
+  --bg-gradient-2: #1e293b;
+  --accent-primary: #3b82f6;
+  /* Blue */
+  --accent-secondary: #8b5cf6;
+  /* Violet */
+  --win-color: #10b981;
+  /* Emerald */
+  --lose-color: #ef4444;
+  /* Red */
+  --draw-color: #f59e0b;
+  /* Amber */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: 'Play', sans-serif;
-  line-height: 1.6;
-  background: #fff;
-  color: #333;
-  /* Anti-Select Protection */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, var(--bg-gradient-2), var(--bg-gradient-1));
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
   user-select: none;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
+/* Background Shapes for Depth */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-primary);
+  opacity: 0.2;
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-secondary);
+  opacity: 0.2;
+  bottom: -50px;
+  right: -50px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(30px, 30px);
+  }
+}
+
+/* Main Container */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px;
+  padding: 3rem;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
   overflow: hidden;
-  padding: 0 2rem;
+}
+
+/* Header & Typography */
+.brand h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--accent-secondary);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+}
+
+.score-board {
+  display: flex;
+  gap: 3rem;
+}
+
+.score-card {
   text-align: center;
 }
 
-.restart-btn {
-  display: none;
-  background: var(--light-color);
-  color: #333;
-  padding: 0.4rem 1.3rem;
+.score-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.score-val {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.streak-badge {
   font-size: 1rem;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--draw-color);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(0.8);
 }
 
-.restart-btn:hover {
-  background: var(--primary-color);
-  color: #fff;
+.streak-badge.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
-.header {
-  text-align: center;
-  margin: 1rem 0;
-}
-
-.header h1 {
-  margin-bottom: 1rem;
-}
-
-.score {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.score p:first-child {
-  background: var(--primary-color);
-}
-
-.score p:last-child {
-  background: var(--dark-color);
+/* Game Choices */
+.prompt-text {
+  margin: 2rem 0;
+  font-weight: 300;
+  color: var(--text-muted);
 }
 
 .choices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  margin-top: 3rem;
-  text-align: center;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.choice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.choice-container:hover {
+  transform: translateY(-10px);
 }
 
 .choice {
+  background: rgba(255, 255, 255, 0.03);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--glass-border);
   cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-muted);
 }
 
 .choice:hover {
-  color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.choice-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Restart Button */
+.restart-btn {
+  margin-top: 1rem;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.restart-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  /* Flex when active */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: #1e293b;
+  width: 90%;
+  max-width: 400px;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.result-icon {
+  margin: 1.5rem 0;
+  font-size: 4rem;
 }
 
 .text-win {
@@ -116,63 +311,97 @@ body {
   color: var(--lose-color);
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background: rgba(0, 0, 0, 0.5);
+.text-draw {
+  color: var(--draw-color);
 }
 
-.modal-content {
-  background: #fff;
+.win-anim i {
+  animation: pop 0.5s ease;
+  color: var(--win-color);
+}
+
+.lose-anim i {
+  animation: shake 0.5s ease;
+  color: var(--lose-color);
+}
+
+.draw-anim i {
+  color: var(--draw-color);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-10px);
+  }
+
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.sub-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
   text-align: center;
-  margin: 10% auto;
-  width: 350px;
-  border-radius: 10px;
-  padding: 3rem;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
 }
 
-.modal-content h1 {
-  margin-bottom: 1rem;
+.highlight {
+  color: var(--accent-primary);
+  font-weight: 500;
 }
 
-.modal-content p {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+.citation-date {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-top: 0.25rem;
 }
 
-/*
-  Modal Animation:
-  @keyframes 'modalopen' defines a simple fade-in effect.
-  The animation is triggered when the modal is displayed.
-*/
-@keyframes modalopen {
-  from {
-    opacity: 0;
+/* Responsiveness */
+@media (max-width: 600px) {
+  .glass-container {
+    padding: 1.5rem;
+    width: 95%;
   }
 
-  to {
-    opacity: 1;
+  .brand h1 {
+    font-size: 2rem;
   }
-}
 
-
-@media (max-width: 700px) {
   .choice {
-    font-size: 110px;
+    width: 80px;
+    height: 80px;
+    font-size: 0.8rem;
   }
-}
 
-@media (max-width: 500px) {
-  .choice {
-    font-size: 80px;
+  .choices {
+    gap: 1rem;
   }
 }
