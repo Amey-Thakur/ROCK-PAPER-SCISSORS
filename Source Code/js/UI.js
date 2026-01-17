@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerHand = document.getElementById('player-hand');
     const computerHand = document.getElementById('computer-hand');
     const statusMsg = document.getElementById('status-msg');
-    const playerScoreElem = document.getElementById('player-score');
-    const computerScoreElem = document.getElementById('computer-score');
+
+    // New Elements
+    const scoreElem = document.getElementById('current-score');
+    const highScoreElem = document.getElementById('high-score');
+    const livesContainer = document.getElementById('lives-container');
+    const modal = document.getElementById('game-over-modal');
+    const finalScoreElem = document.getElementById('final-score');
+    const restartBtn = document.getElementById('btn-restart');
 
     const icons = {
         rock: '✊🏻',
@@ -29,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isIterating = false;
 
     // Initialize
-    updateScoreBoard();
+    updateUI();
 
     choices.forEach(choice => {
         choice.addEventListener('click', () => {
@@ -39,6 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 playRound(playerChoice);
             }
         });
+    });
+
+    restartBtn.addEventListener('click', () => {
+        window.soundManager.playClick();
+        window.gameLogic.resetGame();
+        modal.classList.remove('active');
+        updateUI();
+        statusMsg.textContent = "Choose your weapon!";
+        statusMsg.style.color = "var(--text-primary)";
     });
 
     function playRound(playerChoice) {
@@ -78,16 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update UI
             updateStatus(result, playerChoice, computerChoice);
-            updateScoreBoard();
+            updateUI();
 
             // Play Sounds & Effects
             if (result === 'win') {
                 window.soundManager.playWin();
-                spawnParticles(playerScoreElem);
+                spawnParticles(scoreElem);
             } else if (result === 'lose') {
                 window.soundManager.playLose();
             } else {
                 window.soundManager.playDraw();
+            }
+
+            // Check Game Over
+            if (window.gameLogic.getStats().gameOver) {
+                setTimeout(showGameOver, 1000);
             }
 
             isIterating = false;
@@ -129,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             msg = "You Win!";
             color = "var(--color-win)";
         } else if (result === 'lose') {
-            msg = "You Lose!";
+            msg = "You Lose! (-1 Heart)";
             color = "var(--color-lose)";
         } else {
             msg = "It's a Draw!";
@@ -140,17 +160,23 @@ document.addEventListener('DOMContentLoaded', () => {
         statusMsg.style.color = color;
     }
 
-    function updateScoreBoard() {
-        const score = window.gameLogic.getScore();
-        playerScoreElem.textContent = score.player;
-        computerScoreElem.textContent = score.computer;
+    function updateUI() {
+        const stats = window.gameLogic.getStats();
 
-        // Simple animation for score update
-        playerScoreElem.classList.add('pop');
-        computerScoreElem.classList.add('pop');
-        setTimeout(() => {
-            playerScoreElem.classList.remove('pop');
-            computerScoreElem.classList.remove('pop');
-        }, 300);
+        scoreElem.textContent = stats.score;
+        highScoreElem.textContent = stats.highScore;
+
+        // Update Lives
+        let hearts = "";
+        for (let i = 0; i < stats.lives; i++) hearts += "❤️";
+        for (let i = stats.lives; i < 3; i++) hearts += "🖤"; // Broken/Empty heart
+        livesContainer.textContent = hearts;
+    }
+
+    function showGameOver() {
+        const stats = window.gameLogic.getStats();
+        finalScoreElem.textContent = stats.score;
+        modal.classList.remove('hidden');
+        modal.classList.add('active');
     }
 });
