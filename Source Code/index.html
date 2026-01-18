@@ -1,0 +1,217 @@
+<!--
+    ================================================================
+    Rock Paper Scissors - Main Game
+    ================================================================
+    Project: Rock Paper Scissors
+    Description: A premium, playful Rock-Paper-Scissors game.
+    
+    Created by: Amey Thakur (https://github.com/Amey-Thakur) & Mega Satish (https://github.com/msatmod)
+    Repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+    License: MIT
+    Date Released: 2022-03-12
+    ================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors | Ultimate Battle</title>
+    <meta name="author" content="Amey Thakur & Mega Satish">
+    <meta name="description"
+        content="Play the ultimate Rock Paper Scissors game against the computer. Premium design and smooth animations.">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Rock Paper Scissors | Survival Mode">
+    <meta property="og:description"
+        content="Can you beat the Smart AI? Play the ultimate Rock Paper Scissors survival game.">
+    <meta property="og:image" content="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/favicon.png">
+    <!-- Assuming favicon or a specific social image exists/will exist -->
+    <meta property="og:url" content="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Screen - Apple Style -->
+    <div id="loading-screen">
+        <img id="loading-logo" src="favicon.png" alt="Loading">
+        <div id="loading-bar-container">
+            <div id="loading-bar"></div>
+        </div>
+        <p id="loading-message">Initializing Game...</p>
+    </div>
+
+    <!-- Background Animations -->
+    <div class="bg-animation">
+        <i class="fas fa-hand-rock floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;"></i>
+        <i class="fas fa-hand-paper floating-icon" style="top: 20%; right: 15%; animation-delay: -5s;"></i>
+        <i class="fas fa-hand-scissors floating-icon"
+            style="bottom: 15%; left: 20%; animation-delay: -10s; transform: rotate(90deg);"></i>
+        <i class="fas fa-hand-rock floating-icon" style="bottom: 25%; right: 10%; animation-delay: -15s;"></i>
+        <i class="fas fa-hand-paper floating-icon" style="top: 50%; left: 5%; animation-delay: -2s;"></i>
+        <i class="fas fa-hand-scissors floating-icon"
+            style="top: 40%; right: 5%; animation-delay: -7s; transform: rotate(90deg);"></i>
+    </div>
+
+    <div class="game-container">
+        <header class="header" style="position: relative;">
+            <h1 class="main-title">Rock Paper Scissors</h1>
+
+            <div class="stats-bar">
+                <div class="lives-container" id="lives-container">
+                    <!-- Hearts will be injected here -->
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="high-score">High Score: <span id="high-score">0</span></div>
+                    <button id="mute-btn" class="btn-icon" title="Toggle Sound"
+                        style="background: none; border: none; color: rgba(255,255,255,0.7); font-size: 1.1rem; cursor: pointer; padding: 5px; transition: color 0.3s;">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="score-board">
+                <div class="score-badge">
+                    Score <span id="player-score" class="score-value">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="arena">
+                <div class="hand-display">
+                    <span id="player-hand" class="hand-icon">✊🏻</span>
+                    <div class="player-label">You</div>
+                </div>
+
+                <div class="hand-display">
+                    <span id="computer-hand" class="hand-icon">✊🏻</span>
+                    <div class="player-label">CPU</div>
+                </div>
+            </div>
+
+            <div id="status-msg" class="status-msg">
+                Choose your weapon!
+            </div>
+
+            <div class="controls">
+                <button class="btn-choice" data-choice="rock" title="Rock">
+                    <i class="fas fa-hand-rock"></i>
+                </button>
+                <button class="btn-choice" data-choice="paper" title="Paper">
+                    <i class="fas fa-hand-paper"></i>
+                </button>
+                <button class="btn-choice" data-choice="scissors" title="Scissors">
+                    <i class="fas fa-hand-scissors"></i>
+                </button>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>2022 &copy; All Rights Reserved | Designed and Developed by
+                <a href="https://github.com/Amey-Thakur" target="_blank" rel="noopener noreferrer">Amey Thakur</a> &
+                <a href="https://github.com/msatmod" target="_blank" rel="noopener noreferrer">Mega Satish</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>You ran out of lives!</p>
+            <div class="final-score">Final Score: <span id="final-score">0</span></div>
+            <div class="high-score-display" style="font-size: 1.1rem; color: #93c5fd; margin-bottom: 20px;">High Score:
+                <span id="final-high-score">0</span>
+            </div>
+            <div class="modal-buttons">
+                <button id="restart-btn" class="btn-home">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                <button id="share-btn" class="btn-home btn-share">
+                    <i class="fas fa-share-alt"></i> Share Score
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Share Card (Premium Design) -->
+    <div id="share-card"
+        style="position: fixed; top: -9999px; left: -9999px; width: 600px; padding: 40px; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); color: white; border-radius: 20px; font-family: 'Play', sans-serif; text-align: center; border: 2px solid #3b82f6; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden;">
+
+        <!-- Background Watermarks -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.05;">
+            <i class="fas fa-hand-rock" style="font-size: 150px; position: absolute; top: -20px; left: -20px;"></i>
+            <i class="fas fa-hand-paper" style="font-size: 150px; position: absolute; bottom: -20px; right: -20px;"></i>
+            <i class="fas fa-hand-scissors"
+                style="font-size: 150px; position: absolute; top: 40%; left: 40%; transform: rotate(45deg);"></i>
+        </div>
+
+        <div style="position: relative; z-index: 1;">
+            <div
+                style="font-size: 12px; letter-spacing: 4px; color: #94a3b8; text-transform: uppercase; margin-bottom: 5px;">
+                Human Machine Interaction Project</div>
+            <h1
+                style="margin: 0; font-size: 38px; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; text-shadow: 0 0 15px rgba(59, 130, 246, 0.6); white-space: nowrap;">
+                Rock Paper Scissors</h1>
+            <p style="color: #93c5fd; letter-spacing: 1px; font-size: 16px; margin-top: 5px;">Survival Mode Challenge
+            </p>
+
+            <div
+                style="background: rgba(0,0,0,0.3); border: 1px solid rgba(59, 130, 246, 0.3); padding: 30px; border-radius: 15px; margin: 25px 0;">
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #93c5fd;">I Survived
+                </div>
+                <div id="share-score-val"
+                    style="font-size: 80px; font-weight: 700; line-height: 1; margin: 10px 0; color: white; text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);">
+                    0</div>
+                <div style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #93c5fd;">Rounds
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 25px; padding: 0 20px;">
+                <div style="text-align: left;">
+                    <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">High Score</div>
+                    <div id="share-high-score" style="font-size: 24px; color: #3b82f6; font-weight: bold;">0</div>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">Can you beat AI?</div>
+                    <div style="font-size: 16px; color: #f87171; font-weight: bold;">It learns your moves!</div>
+                </div>
+            </div>
+
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; color: #64748b;">
+                Designed & Developed by <strong style="color: #3b82f6;">Amey</strong> & <strong
+                    style="color: #3b82f6;">Mega</strong>
+                <div style="margin-top: 5px; font-size: 0.8rem; font-family: monospace; color: #475569;">
+                    amey-thakur.github.io/ROCK-PAPER-SCISSORS</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+
+    <script>
+        // Prevent context menu and selection for game-like feel
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+    </script>
+</body>
+
+</html>   
+ 
