@@ -160,14 +160,9 @@ ROCK-PAPER-SCISSORS/
   <img src="screenshots/09-game-over.png" alt="Game Over" width="80%">
   <br><br><br>
 
-  <b>Premium Share Score Card</b>
+  <b>Share Score Card</b>
   <br><br>
   <img src="screenshots/10-share-card.png" alt="Share Card" width="80%">
-  <br><br><br>
-
-  <b>Adaptive Responsive Interface</b>
-  <br><br>
-  <img src="screenshots/11-mobile-view.png" alt="Mobile View" width="80%">
 </div>
 
 ---
