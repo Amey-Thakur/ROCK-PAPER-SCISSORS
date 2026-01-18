@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Poster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1280px;
+            height: 640px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            font-family: 'Play', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Abstract Background Elements */
+        .bg-icon {
+            position: absolute;
+            opacity: 0.03;
+            color: white;
+            z-index: 0;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .icons-wrapper {
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .icon-circle {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+            color: #ffffff;
+        }
+
+        .icon-circle.rock {
+            color: #60a5fa;
+            border-color: #60a5fa;
+        }
+
+        .icon-circle.paper {
+            color: #c084fc;
+            border-color: #c084fc;
+        }
+
+        .icon-circle.scissors {
+            color: #f472b6;
+            border-color: #f472b6;
+        }
+
+        .icon-circle.scissors i {
+            transform: scaleX(-1) rotate(90deg);
+            display: inline-block;
+        }
+
+
+
+        h1 {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            background: linear-gradient(to right, #60a5fa, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.4));
+        }
+
+        .supertitle {
+            font-size: 20px;
+            color: #94a3b8;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+        }
+
+        .footer span {
+            color: #60a5fa;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Decoration -->
+    <i class="fas fa-hand-rock bg-icon"
+        style="top: -50px; left: -50px; font-size: 400px; transform: rotate(-20deg);"></i>
+    <i class="fas fa-hand-scissors bg-icon"
+        style="bottom: -50px; right: -50px; font-size: 400px; transform: rotate(-20deg);"></i>
+
+    <div class="container">
+        <div class="supertitle">HUMAN MACHINE INTERACTION PROJECT</div>
+
+        <h1>ROCK PAPER SCISSORS</h1>
+
+        <div class="icons-wrapper">
+            <div class="icon-circle rock">
+                <i class="fas fa-hand-rock"></i>
+            </div>
+            <div class="icon-circle paper">
+                <i class="fas fa-hand-paper"></i>
+            </div>
+            <div class="icon-circle scissors">
+                <i class="fas fa-hand-scissors"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Designed and Developed by <span>Amey Thakur</span> & <span>Mega Satish</span>
+    </div>
+
+</body>
+
+</html>
