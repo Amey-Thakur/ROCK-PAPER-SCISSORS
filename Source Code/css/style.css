@@ -344,7 +344,13 @@ body {
     max-width: 600px;
     margin: 0 auto 10px auto;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
+}
+
+@media (max-width: 400px) {
+    .stats-bar {
+        font-size: 0.9rem;
+    }
 }
 
 .lives-container {
@@ -447,8 +453,13 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
+    .game-container {
+        padding: 20px;
+    }
+
     .main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
     .score-board {
@@ -462,7 +473,8 @@ body {
     }
 
     .arena {
-        gap: 20px;
+        gap: 15px;
+        min-height: 120px;
     }
 
     .hand-icon {
