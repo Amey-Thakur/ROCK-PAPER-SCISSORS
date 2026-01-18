@@ -48,19 +48,19 @@
 
     <div class="game-container">
         <header class="header" style="position: relative;">
-            <div style="position: absolute; right: 0; top: 0;">
-                <button id="mute-btn" class="btn-icon" title="Toggle Sound"
-                    style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 5px 10px; opacity: 0.8; transition: opacity 0.3s;">
-                    <i class="fas fa-volume-up"></i>
-                </button>
-            </div>
             <h1 class="main-title">Rock Paper Scissors</h1>
 
             <div class="stats-bar">
                 <div class="lives-container" id="lives-container">
                     <!-- Hearts will be injected here -->
                 </div>
-                <div class="high-score">High Score: <span id="high-score">0</span></div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="high-score">High Score: <span id="high-score">0</span></div>
+                    <button id="mute-btn" class="btn-icon" title="Toggle Sound"
+                        style="background: none; border: none; color: rgba(255,255,255,0.7); font-size: 1.1rem; cursor: pointer; padding: 5px; transition: color 0.3s;">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="score-board">
