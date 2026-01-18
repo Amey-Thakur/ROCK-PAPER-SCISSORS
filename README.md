@@ -129,17 +129,27 @@ ROCK-PAPER-SCISSORS/
 <div align="center">
   <b>Game Start Screen</b>
   <br><br>
-  <img src="https://user-images.githubusercontent.com/54937357/158045104-3417d0a9-e358-4aa2-baba-b0f29588ae8d.png" alt="Start Screen" width="80%">
+  <img src="screenshots/01-game-start.png" alt="Game Start" width="80%">
   <br><br>
 
-  <b>Gameplay Interaction</b>
+  <b>Gameplay - You Win!</b>
   <br><br>
-  <img src="https://user-images.githubusercontent.com/54937357/158045157-0c5a2790-60d4-4550-8490-f4682b9faa17.png" alt="Gameplay" width="80%">
+  <img src="screenshots/06-win-round.png" alt="Win Round" width="80%">
   <br><br>
 
-  <b>Round Results Display</b>
+  <b>Gameplay - You Lose!</b>
   <br><br>
-  <img src="https://user-images.githubusercontent.com/54937357/158045131-1b56053f-9f5e-495a-a8e1-92d392094155.png" alt="Round Result" width="80%">
+  <img src="screenshots/05-lose-round.png" alt="Lose Round" width="80%">
+  <br><br>
+
+  <b>Game Over Screen</b>
+  <br><br>
+  <img src="screenshots/09-game-over.png" alt="Game Over" width="80%">
+  <br><br>
+
+  <b>Share Score Card</b>
+  <br><br>
+  <img src="screenshots/10-share-card.png" alt="Share Card" width="80%">
 </div>
 
 ---
