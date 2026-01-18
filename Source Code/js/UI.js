@@ -32,27 +32,26 @@ function startLoading() {
     const loadingScreen = document.getElementById('loading-screen');
     let progress = 0;
 
-    // Simulate loading progress
+    // Simulate loading progress - Matching THE-MATH-GAME timing
     const interval = setInterval(() => {
-        // Smaller increments for smoother, slower loading (Natural feel)
-        progress += Math.random() * 10 + 2;
+        progress += Math.random() * 30 + 10;
 
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-            }, 600); // Slight pause at 100%
+            }, 300); // 300ms pause at 100%
         }
 
         if (loadingBar) loadingBar.style.width = progress + '%';
     }, 200);
 
-    // Absolute Failsafe: Remove screen after 6 seconds max
+    // Absolute Failsafe: Remove screen after 4 seconds max
     setTimeout(() => {
         clearInterval(interval);
         loadingScreen.classList.add('hidden');
-    }, 6000);
+    }, 4000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
