@@ -57,7 +57,7 @@ The development of this interface was guided by core **Human-Machine Interaction
 > [!TIP]
 > **Feedback & Affordance**
 >
-> The interactive icons for Rock, Paper, and Scissors rely on strong **Affordances**—their visual design clearly invites clicking. Coupled with the immediate "glow" effect upon selection, the system provides distinct **Visual Feedback**, confirming to the user that their input has been registered and the system state has changed, a critical requirement for highly interactive systems.
+> The interactive icons for Rock, Paper, and Scissors rely on strong **Affordances** - their visual design clearly invites clicking. Coupled with the immediate "glow" effect upon selection, the system provides distinct **Visual Feedback**, confirming to the user that their input has been registered and the system state has changed, a critical requirement for highly interactive systems.
 
 ---
 
