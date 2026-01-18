@@ -96,28 +96,36 @@ The development of this interface was guided by core **Human-Machine Interaction
 ```python
 ROCK-PAPER-SCISSORS/
 │
-├── .github/                         # GitHub Actions & Automation
+├── .github/                            # GitHub Actions & Automation
 │   └── workflows/
-│       └── deploy.yml               # Automated Staging & Deployment Flow
+│       └── deploy.yml                  # Automated Staging & Deployment Flow
 │
-├── docs/                            # Technical Documentation
-│   └── SPECIFICATION.md             # Architecture & Design Specification
+├── docs/                               # Technical Documentation
+│   └── SPECIFICATION.md                # Architecture & Design Specification
 │
-├── Mega/                                                         # Archival Attribution Assets
-│   ├── Filly.jpg                                                 # Companion (Filly)
-│   └── Mega.png                                                  # Author Profile Image (Mega Satish)
+├── Mega/                               # Archival Attribution Assets
+│   ├── Filly.jpg                       # Companion (Filly)
+│   └── Mega.png                        # Author Profile Image (Mega Satish)
 │
-├── Source Code/                     # Primary Application Layer
-│   ├── style.css                    # Game Styling
-│   ├── app.js                       # Game Logic
-│   └── index.html                   # Game Interface
+├── screenshots/                        # Project Visualization Gallery
+│   ├── 01-game-start.png               # Landing State
+│   ├── 06-win-round.png                # Win Interaction
+│   └── ...                             # Extended Gallery Assets
 │
-├── .gitattributes                   # Git configuration
-├── CITATION.cff                     # Scholarly Citation Metadata
-├── codemeta.json                    # Machine-Readable Project Metadata
-├── LICENSE                          # MIT License Terms
-├── README.md                        # Comprehensive Archival Entrance
-└── SECURITY.md                      # Security Policy & Protocol
+├── Source Code/                        # Primary Application Layer
+│   ├── css/                            # UI Design System
+│   ├── images/                         # Core Brand Assets
+│   ├── js/                             # Application Logic Layer
+│   ├── 404.html                        # Custom Error Page
+│   ├── favicon.png                     # System Identity Icon
+│   └── index.html                      # Main Entry Point
+│
+├── .gitattributes                      # Git configuration
+├── CITATION.cff                        # Scholarly Citation Metadata
+├── codemeta.json                       # Machine-Readable Project Metadata
+├── LICENSE                             # MIT License Terms
+├── README.md                           # Comprehensive Archival Entrance
+└── SECURITY.md                         # Security Policy & Protocol
 ```
 
 ---
@@ -127,29 +135,17 @@ ROCK-PAPER-SCISSORS/
 ## Results
 
 <div align="center">
-  <b>Game Start Screen</b>
+  <b>Live Gameplay Variations: Win, Draw, Lose</b>
   <br><br>
-  <img src="screenshots/01-game-start.png" alt="Game Start" width="80%">
-  <br><br>
-
-  <b>Gameplay - You Win!</b>
-  <br><br>
-  <img src="screenshots/06-win-round.png" alt="Win Round" width="80%">
+  <img src="screenshots/06-win-round.png" alt="Win State" width="30%">
+  <img src="screenshots/02-draw-rock.png" alt="Draw State" width="30%">
+  <img src="screenshots/05-lose-round.png" alt="Lose State" width="30%">
   <br><br>
 
-  <b>Gameplay - You Lose!</b>
+  <b>Final Experience: Game Over & Share Card</b>
   <br><br>
-  <img src="screenshots/05-lose-round.png" alt="Lose Round" width="80%">
-  <br><br>
-
-  <b>Game Over Screen</b>
-  <br><br>
-  <img src="screenshots/09-game-over.png" alt="Game Over" width="80%">
-  <br><br>
-
-  <b>Share Score Card</b>
-  <br><br>
-  <img src="screenshots/10-share-card.png" alt="Share Card" width="80%">
+  <img src="screenshots/09-game-over.png" alt="Game Over" width="45%">
+  <img src="screenshots/10-share-card.png" alt="Share Card" width="45%">
 </div>
 
 ---
