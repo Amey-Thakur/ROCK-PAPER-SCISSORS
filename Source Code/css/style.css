@@ -126,6 +126,7 @@ body {
 /* Header & Scoreboard */
 .header {
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .main-title {

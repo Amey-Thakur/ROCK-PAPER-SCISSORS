@@ -47,14 +47,14 @@
     <div class="bg-shape shape-2"></div>
 
     <div class="game-container">
-        <header class="header">
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <h1 class="main-title">Rock Paper Scissors</h1>
+        <header class="header" style="position: relative;">
+            <div style="position: absolute; right: 0; top: 0;">
                 <button id="mute-btn" class="btn-icon" title="Toggle Sound"
-                    style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; padding: 10px;">
+                    style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 5px 10px; opacity: 0.8; transition: opacity 0.3s;">
                     <i class="fas fa-volume-up"></i>
                 </button>
             </div>
+            <h1 class="main-title">Rock Paper Scissors</h1>
 
             <div class="stats-bar">
                 <div class="lives-container" id="lives-container">
