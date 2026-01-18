@@ -118,19 +118,19 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
-    padding: 30px;
-    /* Reduced padding */
+    padding: 25px;
+    /* Compact padding */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 /* Header & Scoreboard */
 .header {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .main-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 10px;
     background: linear-gradient(120deg, #60a5fa, #c084fc);
@@ -144,8 +144,8 @@ body {
 .score-board {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    gap: 30px;
+    margin-top: 15px;
 }
 
 .score-badge {
@@ -169,9 +169,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    min-height: 180px;
-    /* Reduced min-height */
+    gap: 30px;
+    min-height: 140px;
+    /* Compact arena */
     margin: 10px 0;
 }
 
@@ -181,8 +181,8 @@ body {
 }
 
 .hand-icon {
-    font-size: 4.5rem;
-    /* Slightly smaller */
+    font-size: 4rem;
+    /* Compact size */
     margin-bottom: 5px;
     display: block;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -342,7 +342,7 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 600px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 10px auto;
     width: 100%;
     padding: 0 20px;
 }
@@ -420,14 +420,14 @@ body {
     font-size: 1.5rem;
     min-height: 2.5rem;
     /* Reserve space */
-    margin: 20px 0;
+    margin: 10px 0;
     font-weight: 600;
 }
 
 /* Footer */
 .main-footer {
-    margin-top: 50px;
-    font-size: 0.9rem;
+    margin-top: 15px;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     position: relative;
     z-index: 2;
