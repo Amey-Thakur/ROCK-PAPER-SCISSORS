@@ -12,12 +12,29 @@ Date Released: 2022-03-12
 ================================================================
 */
 
-// Loading Screen Logic
+// Loading Screen Logic (Simulated Progress)
 window.addEventListener('load', () => {
-    const loader = document.getElementById('loading-screen');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 2000); // 2-second premium delay
+    const loadingBar = document.getElementById('loading-bar');
+    const loadingScreen = document.getElementById('loading-screen');
+    let progress = 0;
+
+    // Simulate loading progress
+    const interval = setInterval(() => {
+        // Random increment for organic feel
+        progress += Math.random() * 30 + 10;
+
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 500); // Short delay at 100% before fade
+        }
+
+        if (loadingBar) {
+            loadingBar.style.width = progress + '%';
+        }
+    }, 200);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
