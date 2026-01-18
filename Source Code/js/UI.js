@@ -12,15 +12,28 @@ Date Released: 2022-03-12
 ================================================================
 */
 
-// Loading Screen Logic (Simulated Progress)
+// Loading Screen Logic (Simulated Progress with Failsafe)
 window.addEventListener('load', () => {
+    startLoading();
+});
+
+// Fallback: If window.load doesn't fire within 3 seconds of DOMContentLoaded, force start
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        if (!window.loadingStarted) startLoading();
+    }, 3000);
+});
+
+function startLoading() {
+    if (window.loadingStarted) return;
+    window.loadingStarted = true;
+
     const loadingBar = document.getElementById('loading-bar');
     const loadingScreen = document.getElementById('loading-screen');
     let progress = 0;
 
     // Simulate loading progress
     const interval = setInterval(() => {
-        // Random increment for organic feel
         progress += Math.random() * 30 + 10;
 
         if (progress >= 100) {
@@ -28,14 +41,18 @@ window.addEventListener('load', () => {
             clearInterval(interval);
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-            }, 500); // Short delay at 100% before fade
+            }, 200);
         }
 
-        if (loadingBar) {
-            loadingBar.style.width = progress + '%';
-        }
-    }, 200);
-});
+        if (loadingBar) loadingBar.style.width = progress + '%';
+    }, 100);
+
+    // Absolute Failsafe: Remove screen after 4 seconds max
+    setTimeout(() => {
+        clearInterval(interval);
+        loadingScreen.classList.add('hidden');
+    }, 4000);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
