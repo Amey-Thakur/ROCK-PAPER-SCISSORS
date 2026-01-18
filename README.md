@@ -109,8 +109,16 @@ ROCK-PAPER-SCISSORS/
 │
 ├── screenshots/                        # Project Visualization Gallery
 │   ├── 01-game-start.png               # Landing State
-│   ├── 06-win-round.png                # Win Interaction
-│   └── ...                             # Extended Gallery Assets
+│   ├── 02-draw-rock.png                # Gameplay Variations (Draw)
+│   ├── 03-draw-paper.png               # Gameplay Variations (Draw)
+│   ├── 04-draw-scissors.png            # Gameplay Variations (Draw)
+│   ├── 05-lose-round.png               # Gameplay Variations (Lose)
+│   ├── 06-win-round.png                # Gameplay Variations (Win)
+│   ├── 07-scoring.png                  # Progressive Scoring State
+│   ├── 08-last-life.png                # Survival Mode Critical State
+│   ├── 09-game-over.png                # Performance Summary Modal
+│   ├── 10-share-card.png               # Share Score Performance Card
+│   └── 11-mobile-view.png              # Adaptive Responsive Interface
 │
 ├── Source Code/                        # Primary Application Layer
 │   ├── css/                            # UI Design System
