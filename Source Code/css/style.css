@@ -118,9 +118,9 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: var(--border-radius);
-    padding: 25px;
-    /* Compact padding */
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    /* Optimal padding */
+    box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.5);
 }
 
 /* Header & Scoreboard */
@@ -130,7 +130,7 @@ body {
 }
 
 .main-title {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
     background: linear-gradient(120deg, #60a5fa, #c084fc);
@@ -169,9 +169,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    min-height: 140px;
-    /* Compact arena */
+    gap: 40px;
+    min-height: 160px;
+    /* Balanced arena */
     margin: 10px 0;
 }
 
@@ -181,8 +181,8 @@ body {
 }
 
 .hand-icon {
-    font-size: 4rem;
-    /* Compact size */
+    font-size: 5rem;
+    /* Larger visuals */
     margin-bottom: 5px;
     display: block;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -417,7 +417,7 @@ body {
 
 /* Status Message */
 .status-msg {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     min-height: 2.5rem;
     /* Reserve space */
     margin: 10px 0;
@@ -426,8 +426,8 @@ body {
 
 /* Footer */
 .main-footer {
-    margin-top: 15px;
-    font-size: 0.8rem;
+    margin-top: 30px;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     position: relative;
     z-index: 2;
