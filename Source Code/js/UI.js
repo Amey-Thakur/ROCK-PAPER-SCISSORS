@@ -12,6 +12,14 @@ Date Released: 2022-03-12
 ================================================================
 */
 
+// Loading Screen Logic
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 2000); // 2-second premium delay
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const choices = document.querySelectorAll('.btn-choice');
