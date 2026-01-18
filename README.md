@@ -126,7 +126,8 @@ ROCK-PAPER-SCISSORS/
 │   ├── js/                             # Application Logic Layer
 │   ├── 404.html                        # Custom Error Page
 │   ├── favicon.png                     # System Identity Icon
-│   └── index.html                      # Main Entry Point
+│   ├── index.html                      # Main Entry Point
+│   └── poster.html                     # Social Media Preview Poster
 │
 ├── .gitattributes                      # Git configuration
 ├── CITATION.cff                        # Scholarly Citation Metadata
