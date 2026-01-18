@@ -77,7 +77,7 @@ The development of this interface was guided by core **Human-Machine Interaction
 
 > [!NOTE]
 > ### Interactive Polish: The Survival Aesthetic
-> We have reimagined the classic game as a "Survival Challenge," introducing a health-point system (Hearts) that transforms a simple pastime into a tension-filled arcade experience. The visual language has been elevated with a **Deep Blue Glassmorphism** theme, ensuring every element—from the floating background particles to the "right-handed" vertical icons—feels purposeful and premium. Complementing this experience, the application includes a high-fidelity performance summary feature, with each shareable scorecard digitally signed by **Amey & Mega**.
+> We have reimagined the classic game as a "Survival Challenge," introducing a health-point system (Hearts) that transforms a simple pastime into a tension-filled arcade experience. The visual language has been elevated with a **Deep Blue Glassmorphism** theme, ensuring every element - from the floating background particles to the "right-handed" vertical icons - feels purposeful and premium. Complementing this experience, the application includes a high-fidelity performance summary feature, with each shareable scorecard digitally signed by **Amey & Mega**.
 
 ### Tech Stack
 - **Languages**: HTML5, CSS3, JavaScript (ES6+)
