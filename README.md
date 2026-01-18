@@ -67,16 +67,24 @@ The development of this interface was guided by core **Human-Machine Interaction
 
 | Feature | Description |
 |---------|-------------|
-| **Interactive Gameplay** | Play Rock, Paper, Scissors against an automated opponent. |
-| **Logic Implementation** | Robust condition handling to determine game outcomes instantly. |
-| **Real-time Scoring** | Tracks player and computer scores across rounds. |
-| **Visual Feedback** | Dynamic icon updates and status messages for each round. |
-| **Responsive Design** | Optimized for playability across desktop and mobile devices. |
+| **Survival Mode** | High-stakes gameplay where every loss depletes a life, challenging players to "survive" against the AI. |
+| **Smart AI** | An intelligent opponent that adapts to player patterns, creating a challenging and dynamic experience. |
+| **Real-Time Physics** | **Floating Ghost Icons** drift through the background, adding atmospheric depth without distraction. |
+| **Premium Analytics** | **High-Fidelity PDF-Ready Share Cards** generated instantly for performance sharing. |
+| **Score Tracking** | Persistent high score system using Web LocalStorage to track lifetime bests. |
+| **Adaptive UI** | Fully **responsive glassmorphic interface** optimized for mobile, tablet (iPad), and desktop. |
+| **Audio Immersion** | Procedural sound generation for game events, complete with a discreet **Mute Toggle**. |
+
+> [!NOTE]
+> ### Interactive Polish: The Survival Aesthetic
+> We have reimagined the classic game as a "Survival Challenge," introducing a health-point system (Hearts) that transforms a simple pastime into a tension-filled arcade experience. The visual language has been elevated with a **Deep Blue Glassmorphism** theme, ensuring every element—from the floating background particles to the "right-handed" vertical icons—feels purposeful and premium. Complementing this experience, the application includes a high-fidelity performance summary feature, with each shareable scorecard digitally signed by **Amey & Mega**.
 
 ### Tech Stack
-- **Languages**: HTML5, CSS3, JavaScript
-- **Framework**: DOM API
-- **Deployment**: GitHub Actions (Staging Workflow)
+- **Languages**: HTML5, CSS3, JavaScript (ES6+)
+- **Logic**: Vanilla JS (Game Loop & State Management)
+- **Imaging**: **html2canvas** (Custom high-fidelity capture engine)
+- **UI System**: Premium Glassmorphic Design (Custom Vanilla CSS3)
+- **Deployment**: GitHub Actions (Staging & Continuous Delivery Workflow)
 - **Hosting**: GitHub Pages
 
 ---
