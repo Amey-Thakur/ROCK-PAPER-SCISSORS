@@ -34,24 +34,25 @@ function startLoading() {
 
     // Simulate loading progress
     const interval = setInterval(() => {
-        progress += Math.random() * 30 + 10;
+        // Smaller increments for smoother, slower loading (Natural feel)
+        progress += Math.random() * 10 + 2;
 
         if (progress >= 100) {
             progress = 100;
             clearInterval(interval);
             setTimeout(() => {
                 loadingScreen.classList.add('hidden');
-            }, 200);
+            }, 600); // Slight pause at 100%
         }
 
         if (loadingBar) loadingBar.style.width = progress + '%';
-    }, 100);
+    }, 200);
 
-    // Absolute Failsafe: Remove screen after 4 seconds max
+    // Absolute Failsafe: Remove screen after 6 seconds max
     setTimeout(() => {
         clearInterval(interval);
         loadingScreen.classList.add('hidden');
-    }, 4000);
+    }, 6000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
