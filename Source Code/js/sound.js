@@ -17,11 +17,17 @@ class SoundManager {
     constructor() {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
         this.enabled = true;
+        this.muted = false;
+    }
+
+    toggleMute() {
+        this.muted = !this.muted;
+        return this.muted;
     }
 
     // Helper to create simple beep/boop sounds
     playTone(freq, type, duration, vol = 0.1) {
-        if (!this.enabled) return;
+        if (!this.enabled || this.muted) return;
 
         // Resume context if suspended (browser policy)
         if (this.ctx.state === 'suspended') {

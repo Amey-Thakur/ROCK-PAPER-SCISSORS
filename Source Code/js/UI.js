@@ -69,6 +69,35 @@ document.addEventListener('DOMContentLoaded', () => {
         shareScore();
     });
 
+    // Mute Button Logic
+    const muteBtn = document.getElementById('mute-btn');
+    muteBtn.addEventListener('click', () => {
+        const isMuted = window.soundManager.toggleMute();
+        muteBtn.innerHTML = isMuted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+        window.soundManager.playClick(); // Will only play if not muted (logic in sound.js handles this check? actually playClick calls playTone which checks muted. So if muted, no sound.)
+        // Actually, if we just muted, we might want one last "click" or silence? 
+        // Logic: if isMuted is true, playTone returns early. So silence. Correct.
+    });
+
+    // Keyboard Controls
+    document.addEventListener('keydown', (e) => {
+        if (isIterating || !document.getElementById('game-over-modal').classList.contains('hidden')) return;
+
+        const key = e.key.toLowerCase();
+        let choice = null;
+
+        if (key === 'r') choice = 'rock';
+        if (key === 'p') choice = 'paper';
+        if (key === 's') choice = 'scissors';
+
+        if (choice) {
+            // Find the button to trigger visual feedback if needed? 
+            // Or just call logic directly. Let's trigger the button click to re-use logic
+            const btn = document.querySelector(`.btn-choice[data-choice="${choice}"]`);
+            if (btn) btn.click();
+        }
+    });
+
     function shareScore() {
         // Populate Data
         const state = window.gameLogic.getScore();

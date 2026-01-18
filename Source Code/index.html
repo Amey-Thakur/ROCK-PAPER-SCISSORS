@@ -23,6 +23,16 @@
         content="Play the ultimate Rock Paper Scissors game against the computer. Premium design and smooth animations.">
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Rock Paper Scissors | Survival Mode">
+    <meta property="og:description"
+        content="Can you beat the Smart AI? Play the ultimate Rock Paper Scissors survival game.">
+    <meta property="og:image" content="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/favicon.png">
+    <!-- Assuming favicon or a specific social image exists/will exist -->
+    <meta property="og:url" content="https://amey-thakur.github.io/ROCK-PAPER-SCISSORS">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -38,7 +48,13 @@
 
     <div class="game-container">
         <header class="header">
-            <h1 class="main-title">Rock Paper Scissors</h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <h1 class="main-title">Rock Paper Scissors</h1>
+                <button id="mute-btn" class="btn-icon" title="Toggle Sound"
+                    style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; padding: 10px;">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
 
             <div class="stats-bar">
                 <div class="lives-container" id="lives-container">
