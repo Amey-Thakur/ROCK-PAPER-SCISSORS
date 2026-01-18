@@ -135,17 +135,39 @@ ROCK-PAPER-SCISSORS/
 ## Results
 
 <div align="center">
-  <b>Live Gameplay Variations: Win, Draw, Lose</b>
+  <b>1. Main Landing Screen</b>
   <br><br>
-  <img src="screenshots/06-win-round.png" alt="Win State" width="30%">
-  <img src="screenshots/02-draw-rock.png" alt="Draw State" width="30%">
-  <img src="screenshots/05-lose-round.png" alt="Lose State" width="30%">
-  <br><br>
+  <img src="screenshots/01-game-start.png" alt="Landing Screen" width="80%">
+  <br><br><br>
 
-  <b>Final Experience: Game Over & Share Card</b>
+  <b>2. Gameplay: Win Interaction</b>
   <br><br>
-  <img src="screenshots/09-game-over.png" alt="Game Over" width="45%">
-  <img src="screenshots/10-share-card.png" alt="Share Card" width="45%">
+  <img src="screenshots/06-win-round.png" alt="Win State" width="80%">
+  <br><br><br>
+
+  <b>3. Gameplay: Draw Outcome</b>
+  <br><br>
+  <img src="screenshots/02-draw-rock.png" alt="Draw State" width="80%">
+  <br><br><br>
+
+  <b>4. Gameplay: Lose Outcome</b>
+  <br><br>
+  <img src="screenshots/05-lose-round.png" alt="Lose State" width="80%">
+  <br><br><br>
+
+  <b>5. Final Score & High Score Record</b>
+  <br><br>
+  <img src="screenshots/09-game-over.png" alt="Game Over" width="80%">
+  <br><br><br>
+
+  <b>6. Premium Share Score Card</b>
+  <br><br>
+  <img src="screenshots/10-share-card.png" alt="Share Card" width="80%">
+  <br><br><br>
+
+  <b>7. Adaptive Responsive Interface</b>
+  <br><br>
+  <img src="screenshots/11-mobile-view.png" alt="Mobile View" width="80%">
 </div>
 
 ---
