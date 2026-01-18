@@ -451,6 +451,26 @@ body {
     text-decoration: underline;
 }
 
+/* Tablet / Laptop (Small) Responsiveness */
+@media (max-width: 900px) {
+    .game-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .main-title {
+        font-size: 2.4rem;
+    }
+
+    .hand-icon {
+        font-size: 4.5rem;
+    }
+
+    .arena {
+        gap: 30px;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     .game-container {
