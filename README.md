@@ -198,6 +198,13 @@ ROCK-PAPER-SCISSORS/
 2.  **Launch**:
     Open `Source Code/index.html` in your preferred browser.
 
+> [!TIP]
+> **Arcade-Style Survival Challenge | Rock Paper Scissors**
+> 
+> Experience a high-fidelity web reconstruction of this classic game, featuring a high-stakes **Survival Mode**, pattern-adapting **Smart AI**, and a premium **Deep Blue Glassmorphic** interface designed to optimize user engagement through real-time HMI feedback loops.
+>
+> [**Launch Live Demo**](https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/)
+
 ---
 
 <!-- =========================================================================================
