@@ -32,13 +32,43 @@
             }
         }
     ],
+    "dateCreated": "2022-03-13",
     "dateReleased": "2022-03-12",
     "codeRepository": "https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS",
+    "isPartOf": "https://github.com/Amey-Thakur/COMPUTER-ENGINEERING",
     "developmentStatus": "complete",
     "applicationCategory": "Game Theory / Simulation",
     "keywords": [
         "Rock Paper Scissors",
         "Game Theory",
-        "Terna Engineering College"
-    ]
+        "Terna Engineering College",
+        "Arcade Game",
+        "Computer Engineering",
+        "Computer Science",
+        "CSS",
+        "Engineering",
+        "HMI",
+        "HTML",
+        "Human Machine Interaction",
+        "JavaScript",
+        "Responsive UI",
+        "Rock Paper Scissors Game",
+        "Rock Paper Scissors Website",
+        "Smart AI",
+        "University Of Mumbai",
+        "University of Mumbai",
+        "Mumbai University",
+        "Navi Mumbai",
+        "India",
+        "B.E. Computer Engineering",
+        "Semester VIII",
+        "Amey Thakur",
+        "amey",
+        "ameythakur",
+        "amey-thakur",
+        "ameyarc",
+        "Mega Satish",
+        "megasatish"
+    ],
+    "url": "https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/"
 }

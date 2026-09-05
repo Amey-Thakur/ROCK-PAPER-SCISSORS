@@ -1,0 +1,35 @@
+# Rock Paper Scissors
+
+> A classic Rock Paper Scissors game implemented as a responsive web
+> application, featuring interactive gameplay and score tracking.
+
+Author: Amey Thakur, ORCID 0000-0001-5644-1575
+Co-author: Mega Satish, ORCID 0000-0002-1844-9557
+Institution: Terna Engineering College, University of Mumbai
+Programme: B.E. Computer Engineering, Fourth Year, Semester VIII
+Licence: CC BY 4.0, attribution required
+Repository created: 13 March 2022
+Work dated: 12 March 2022
+
+## What is in this repository
+
+- Mega, 6 files
+- Source Code, 14 files
+- docs, 1 file
+- screenshots, 11 files
+- CHECKLIST.md
+
+## Subject terms
+
+arcade-game, computer-engineering, computer-science, css, engineering, hmi,
+html, human-machine-interaction, javascript, responsive-ui,
+rock-paper-scissors, rock-paper-scissors-game,
+rock-paper-scissors-website, smart-ai, university-of-mumbai
+
+## Where this sits
+
+- This repository: https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS
+- Degree index, every subject and project: https://github.com/Amey-Thakur/COMPUTER-ENGINEERING
+- Project page: https://amey-thakur.github.io/ROCK-PAPER-SCISSORS/
+- Author: https://github.com/Amey-Thakur
+- Research notes and reflections: https://amey-thakur.github.io/

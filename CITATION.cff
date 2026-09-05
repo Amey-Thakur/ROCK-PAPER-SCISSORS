@@ -11,3 +11,7 @@ title: "ROCK-PAPER-SCISSORS"
 version: 1.0.0
 date-released: 2022-03-12
 url: "https://github.com/Amey-Thakur/ROCK-PAPER-SCISSORS"
+identifiers:
+  - type: other
+    value: "2022-03-13"
+    description: "Date this repository was created on GitHub."
